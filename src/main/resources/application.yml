@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sharding_demo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8&useSSL=false
+    username: dev
+    password: dev
+
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+
+logging:
+  level:
+    com.luoyifan.shardingdemo: debug
