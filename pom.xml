@@ -26,8 +26,9 @@
     </build>
 
     <properties>
-        <fastjson.version>1.2.49</fastjson.version>
         <lombok.version>1.18.2</lombok.version>
+        <!-- 必须要 8.x 版本 ,使用6.x 版本会在初始化时报异常 -->
+        <mysql-connector-java.version>8.0.15</mysql-connector-java.version>
         <mybatis-plus.version>3.1.0</mybatis-plus.version>
         <spring-boot.version>2.1.0.RELEASE</spring-boot.version>
         <sharding.version>3.0.0</sharding.version>
@@ -46,11 +47,11 @@
     </dependencyManagement>
 
     <dependencies>
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba</groupId>-->
+            <!--<artifactId>fastjson</artifactId>-->
+            <!--<version>${fastjson.version}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
@@ -63,6 +64,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.version}</version>
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -73,10 +75,9 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/io.shardingsphere/sharding-jdbc-spring-boot-starter -->
         <dependency>
             <groupId>io.shardingsphere</groupId>
-            <artifactId>sharding-jdbc-spring</artifactId>
+            <artifactId>sharding-jdbc-core</artifactId>
             <version>${sharding.version}</version>
         </dependency>
 
