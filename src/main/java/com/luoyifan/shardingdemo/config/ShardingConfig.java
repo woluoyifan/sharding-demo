@@ -18,8 +18,8 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.sql.Timestamp;
-import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Properties;
 import java.util.stream.Collectors;
@@ -73,7 +73,7 @@ public class ShardingConfig {
             Range<Timestamp> valueRange = rangeShardingValue.getValueRange();
             log.info("shardingValueRange:{}", valueRange);
 //              rangeShardingValue.getLogicTableName()
-            return Collections.EMPTY_SET;
+            return new HashSet<>();
         };
 
         //分表策略,分表字段为order_time
